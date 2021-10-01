@@ -29,6 +29,7 @@ function checkAccessibiliy(){
 	var accessibilityHighlightLinks = getCookie('accessibility_highlightLinks');
 	var accessibilityContrast = getCookie('accessibility_contrast');
 	var accessibilityTextSize = getCookie('accessibility_textSize');
+	var accessibilityCursorSize = getCookie('accessibility_cursorSize');
 
 	if (accessibilityGrayscale == 'true')
 	{
@@ -50,6 +51,14 @@ function checkAccessibiliy(){
 		document.querySelector('html').classList.toggle('accessibilityTools-textSize');
 		document.querySelector('#AccessibilityToolsTextSize').checked = true;
 	}
+	if (accessibilityCursorSize == 'true')
+	{
+		document.querySelector('html').classList.toggle('accessibilityTools-cursorSize');
+		document.querySelector('#AccessibilityToolsCursorSize').checked = true;
+	}
+
+
+	
 }
 var ready = (callback) => {
     if (document.readyState != "loading") callback();
@@ -110,6 +119,17 @@ ready(() => {
 		}
 		else{
 			setCookie('accessibility_textSize', 'false', '/','');
+		}	
+	});
+
+	document.querySelector('#AccessibilityToolsCursorSize').addEventListener('click',function(){
+		document.querySelector("html").classList.toggle("accessibilityTools-cursorSize");
+		if (document.querySelector('html').classList.contains('accessibilityTools-cursorSize'))
+		{
+			setCookie('accessibility_cursorSize', 'true', '/','31 Dec 9999 23:59:59 GMT');
+		}
+		else{
+			setCookie('accessibility_cursorSize', 'false', '/','');
 		}	
 	});
 
