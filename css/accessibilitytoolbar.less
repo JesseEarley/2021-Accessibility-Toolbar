@@ -1,0 +1,108 @@
+//----------------------
+//  Accessibility Tools
+//----------------------
+#AccessibilityToolsButton {
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    left: -10000px;
+    overflow: hidden;
+    padding: .3em;
+    position: absolute;
+    top: auto;
+    z-index: 100;
+
+    &:focus{
+        background-color: #444;
+        left: 0;
+        position: absolute;
+        top: 0;
+    }
+}
+
+
+.accessibilityTools{
+    text-align: center;
+
+    h3{
+        font-size: 1.3rem;
+    }
+
+    .accessibilityLabel{
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        width: 1px;
+    }
+
+    /* The switch - the box around the slider */
+    .switch {
+        display: inline-block;
+        height: 34px;
+        position: relative;
+        width: 60px;
+      }
+      
+      /* The slider */
+      .slider {
+        background-color: #ccc;
+        bottom: 0;
+        cursor: pointer;
+        left: 0;
+        position: absolute;
+        right: 0;
+        transition: .4s;
+        top: 0;
+        -webkit-transition: .4s;
+
+        &:before {
+            background-color: white;
+            bottom: 4px;
+            content: "";
+            height: 26px;
+            left: 4px;
+            position: absolute;
+            transition: .4s;
+            width: 26px;
+            -webkit-transition: .4s;
+        }
+      }
+      input{
+          &:checked + .slider{
+            background-color: #2196F3;
+          }
+          &:focus + .slider{
+            box-shadow: 0 0 8px #007BFF;
+          }
+
+          &:checked + .slider:before{
+            transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            -webkit-transform: translateX(26px);
+          }
+      }
+}
+
+.accessibilityTools-grayscale{
+    filter: grayscale(100%)!important;
+    -webkit-filter: grayscale(100%)!important;
+}
+
+.accessibilityTools-highlightLinks a,
+.accessibilityTools-highlightLinks a *
+{
+    background-color: #000 !important;
+    color: #FF0 !important;
+    text-decoration: underline !important;
+}
+
+.accessibilityTools-contrast{
+    background: #000!important;
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
+}
+
+.accessibilityTools-textSize{
+    zoom: 160%;
+}
