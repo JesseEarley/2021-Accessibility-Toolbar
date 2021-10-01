@@ -6,74 +6,74 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous">
+    <!-- CSS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
         crossorigin="anonymous">
-    <link rel="stylesheet" href="css/accessibilitytoolbar.css">
+    <link rel="stylesheet" href="css/accessibilitytoolbar.min.css">
     <title>Hello, world!</title>
+
+    <style>
+        body{
+            font-size: 1.6rem;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="accessibilityToolsContainer">
-                    <!--Start markup for accessibility toolbar-->
-                    <a href="#" id="AccessibilityToolsButton" onclick="toggleAccessibilityTools()">Display Accessibility
-                        Tools</a>
-                    <div id="AccessibilityTools" class="accessibilityTools card" style="display: none;">
-                        <div class="card-body">
-                            <h2 class="card-title">Accessibility Tools</h2>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <h3><span class="fa fa-desktop" aria-hidden="true"></span><br />Grayscale</h3>
-                                    <label class="switch">
-                                        <span class="accessibilityLabel">Grayscale</span>
-                                        <input type="checkbox" id="AccessibilityToolsGrayscale">
-                                        <span class="slider"></span>
-                                    </label>
-                                </div>
-                                <div class="col-md-3">
-                                    <h3><span class="fa fa-link" aria-hidden="true"></span><br />Highlight Links</h3>
-                                    <label class="switch">
-                                        <span class="accessibilityLabel">Highlight Links</span>
-                                        <input type="checkbox" id="AccessibilityToolsHightLinks">
-                                        <span class="slider"></span>
-                                    </label>
-                                </div>
-                                <div class="col-md-3">
-                                    <h3><span class="fa fa-adjust" aria-hidden="true"></span><br />Change Contrast</h3>
-                                    <label class="switch">
-                                        <span class="accessibilityLabel">Change Contrast</span>
-                                        <input type="checkbox" id="AccessibilityToolsContrast">
-                                        <span class="slider"></span>
-                                    </label>
-                                </div>
-                                <div class="col-md-3">
-                                    <h3><span class="fa fa-text-height" aria-hidden="true"></span><br />Increase Text Size</h3>
-                                    <label class="switch">
-                                        <span class="accessibilityLabel">Increase Text Size</span>
-                                        <input type="checkbox" id="AccessibilityToolsTextSize">
-                                        <span class="slider"></span>
-                                    </label>
-                                </div>
-                            </div>
-                            <p class="card-text"></p>
-                            <button id="AccessibilityToolsButtonClose" class="btn btn-green">Close Accessibility Tools</button>
-                        </div>
+    <div id="AccessibilityToolsWrapper">
+        <!--Start markup for accessibility toolbar-->
+        <a href="#" id="AccessibilityToolsButton" onclick="toggleAccessibilityTools()">Display Accessibility
+            Tools</a>
+        <div id="AccessibilityTools" class="accessibilityTools">
+            <div>
+                <h2>Accessibility Tools</h2>
+                <div class="accessibilityToolsOptionsContainer">
+                    <div class="accessibilityToolsOption">
+                        <h3><span class="fa fa-desktop" aria-hidden="true"></span><br />Grayscale</h3>
+                        <label class="switch">
+                            <span class="accessibilityLabel">Grayscale</span>
+                            <input type="checkbox" id="AccessibilityToolsGrayscale">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="accessibilityToolsOption">
+                        <h3><span class="fa fa-link" aria-hidden="true"></span><br />Highlight Links</h3>
+                        <label class="switch">
+                            <span class="accessibilityLabel">Highlight Links</span>
+                            <input type="checkbox" id="AccessibilityToolsHightLinks">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="accessibilityToolsOption">
+                        <h3><span class="fa fa-adjust" aria-hidden="true"></span><br />Change Contrast</h3>
+                        <label class="switch">
+                            <span class="accessibilityLabel">Change Contrast</span>
+                            <input type="checkbox" id="AccessibilityToolsContrast">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="accessibilityToolsOption">
+                        <h3><span class="fa fa-text-height" aria-hidden="true"></span><br />Increase Text Size</h3>
+                        <label class="switch">
+                            <span class="accessibilityLabel">Increase Text Size</span>
+                            <input type="checkbox" id="AccessibilityToolsTextSize">
+                            <span class="slider"></span>
+                        </label>
                     </div>
                 </div>
-                <!--End markup for accessibility toolbar-->
+                <button id="AccessibilityToolsButtonClose" class="btn btn-green">Close Accessibility Tools</button>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="alert alert-danger">
+    </div>
+    <!--End markup for accessibility toolbar-->
+    <main>
+        <div>
+            <div>
+                <div>
                     <h1>Try pressing the <strong>ALT + SHIFT + A</strong> keyboard combination, or tabbing to the "Display Accessibility
                         Tools" button. </h1>
                 </div>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero error id, ex dignissimos neque ab laudantium rerum alias fugiat modi ducimus adipisci possimus facilis a, eligendi voluptas distinctio nemo expedita vitae quisquam. Fugit repellendus magnam laborum eaque. Necessitatibus reprehenderit fuga voluptatum accusamus, est distinctio reiciendis ullam consequuntur velit praesentium modi laudantium id cum illo ipsam voluptas eveniet animi autem, hic error odio exercitationem aut laboriosam ducimus? Corporis neque suscipit ullam aperiam eum reiciendis asperiores excepturi eos pariatur ut omnis quae ab quisquam ad iure fuga non adipisci dolorum necessitatibus magni, qui consequuntur modi rem provident. Aspernatur velit, ut omnis illum nostrum incidunt dolorum? Architecto laudantium inventore, earum qui, consectetur facilis vitae asperiores expedita quam cupiditate veritatis quibusdam, sequi est. Reiciendis id consectetur asperiores, cupiditate eligendi aut dolorum molestiae non fugit velit est at recusandae tempora, molestias suscipit quidem maxime facilis facere sunt hic a quia reprehenderit aliquid assumenda! Voluptas rem quis minima unde corrupti reiciendis provident eius obcaecati, voluptate amet vel facere accusamus officiis architecto ut eos laudantium temporibus magni reprehenderit tempore quos ullam earum corporis tenetur? Suscipit voluptate sit ab iure doloribus asperiores, in molestias! In hic corrupti aliquid ab repudiandae praesentium aspernatur voluptate quis, similique minima rem laudantium nemo consectetur ratione itaque vel provident eius! Consequatur dignissimos unde reiciendis quae at, similique commodi, porro, voluptatum ratione itaque aperiam odit? Aliquid eligendi atque voluptatibus eveniet totam, nam et reprehenderit at impedit reiciendis nulla quos velit suscipit voluptatem officia architecto veniam? Totam iure consequatur officia suscipit molestiae quis animi, similique ad. Quia quae ut nobis incidunt.</p>
                 <ul>
                     <li>
                         <a href="#">Example link</a>
@@ -90,18 +90,9 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </main>
 
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
-    <script src="JS/accessibilitytoolbar.js"></script>
+    <script src="js/accessibilitytoolbar.js"></script>
 </body>
 
 </html>
