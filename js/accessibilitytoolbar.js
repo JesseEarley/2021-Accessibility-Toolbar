@@ -20,7 +20,7 @@ function getCookie(key) {
 
 // This function will open/close the accessibility tools
 function toggleAccessibilityTools(){
-	$('#AccessibilityTools').slideToggle();
+    document.querySelector('#AccessibilityTools').classList.toggle('is-visible');
 }
 
 /* This function is called on page load to see if settings need to be pulled from cookies. If they do, those classes are toggled. */
@@ -51,9 +51,12 @@ function checkAccessibiliy(){
 		document.querySelector('#AccessibilityToolsTextSize').checked = true;
 	}
 }
+var ready = (callback) => {
+    if (document.readyState != "loading") callback();
+    else document.addEventListener("DOMContentLoaded", callback);
+  }
 
-
-$(function () {
+ready(() => { 
 	/* Need to check to see if we need to display the accessibility tool settings */
 	checkAccessibiliy();
  
