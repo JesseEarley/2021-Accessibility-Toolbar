@@ -1,5 +1,8 @@
 # 2021-Accessibility-Toolbar
 
+## Demo
+https://jesseearley.github.io/2021-Accessibility-Toolbar/
+
 ## Description
 The Accessibility Toolbar (2021 version) is a reformatted and updated version of my previous Accessibility Toolbar project (https://github.com/JesseEarley/accessibilitytoolbar). This project allows you to quickly add accessibility tools to the front-end of your website for your website visitors to help them navigate your website more effectively. The features include:
 
@@ -27,4 +30,4 @@ This feature will increase the curosr size for both the regular **pointer** and 
 The Accessibility Toolbar has base styles, so please style as necessary to incorporate into your website or project. The CSS file does have 3 variables to allow for additional customization:
 - --accessibility-tools-wrapper: Specify width of the toolbar - default is 100%
 - --accessibility-tools-highlightColor: Specifcy the color that links should be highlighted in when **Highlight Links** option is selected  - default is #f00
-- --accessibility-tools-textSize: Specifcy the base font size when **Increase Font Size** is selected  - default is 16px (See note above about Increase Text Size feature)
+- --accessibility-tools-textSize: Specify the base font size when **Increase Font Size** is selected  - default is 16px (See note above about Increase Text Size feature)
