@@ -1,4 +1,9 @@
 /*** FUNCTIONS ***/
+/* This function will let us know if we are on a touch device */
+function isTouchDevice() {
+	return "ontouchstart" in document.documentElement;
+}
+
 /* This function will set a cookie */
 function setCookie(key, value, path, time) {
     if (time != '') {
@@ -57,9 +62,14 @@ function checkAccessibiliy(){
 		document.querySelector('#AccessibilityToolsCursorSize').checked = true;
 	}
 
-
-	
+	/*If on mobile, we need to display the accessibility button*/
+	if (isTouchDevice()) {
+		document.querySelector(
+			"#AccessibilityToolsButton-Mobile"
+		).style.display = "block";
+	}
 }
+
 var ready = (callback) => {
     if (document.readyState != "loading") callback();
     else document.addEventListener("DOMContentLoaded", callback);
