@@ -41,4 +41,3 @@ The toolbar can be triggered in a variety of methods:
 
 ## ToDo
 - Remove dependency on FontAwesome
-- Add mobile button
