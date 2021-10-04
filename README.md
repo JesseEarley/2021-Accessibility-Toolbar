@@ -33,6 +33,12 @@ The Accessibility Toolbar has base styles, so please style as necessary to incor
 - --accessibility-tools-highlightColor: Specifcy the color that links should be highlighted in when **Highlight Links** option is selected  - default is #f00
 - --accessibility-tools-textSize: Specify the base font size when **Increase Font Size** is selected  - default is 16px (See note above about Increase Text Size feature)
 
+## Usage
+The toolbar can be triggered in a variety of methods:
+- **ALT + SHIFT + A** keyboard combination 
+- Tabbing to the **Display Accessibility Tools** link and pressing **Enter** 
+- Using a mobile device and touching the accessibility icon in the top right of the screen
+
 ## ToDo
 - Remove dependency on FontAwesome
 - Add mobile button
