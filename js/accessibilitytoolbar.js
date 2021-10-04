@@ -4,11 +4,11 @@ function setCookie(key, value, path, time) {
     if (time != '') {
         var expires = new Date();
         expires.setTime(expires.getTime() + time);
-        document.cookie = key + '=' + value + ';path=' + path + ';expires=' + expires.toUTCString();
+        document.cookie = key + '=' + value + ';path=' + path + ';expires=' + expires.toUTCString() + ';sameSite=Lax';
     }
-    //For when we just want a session cookie
+	//Keeo the cookie but clear it out
     else{
-        document.cookie = key + '=' + value + ';path=' + path;
+        document.cookie = key + '=' + value + ';path=' + path + ';sameSite=Lax';
     }
 }
 
