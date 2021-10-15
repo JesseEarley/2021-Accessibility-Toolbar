@@ -18,6 +18,12 @@ This feature will invert the colors on a page.
 ### Increase Text Size
 This feature will increase the text size across all elements on a page. (Note: This feature will change the font-size for the 'HTML' element. In order to properly make use of this feature, your font-styles should be in **rem** units.
 
+### Increase Letter Spacing
+This feature will increase the spacing between all letters on the page.
+
+### Dyslexia Friendly Font
+This feature will change the font for the entire page to one that is easier to read for those with dyslexia. 
+
 ### Increase Cursor Size
 This feature will increase the curosr size for both the regular **pointer** and **hand** cursors. 
 
@@ -32,6 +38,7 @@ The Accessibility Toolbar has base styles, so please style as necessary to incor
 - --accessibility-tools-wrapper: Specify width of the toolbar - default is 100%
 - --accessibility-tools-highlightColor: Specifcy the color that links should be highlighted in when **Highlight Links** option is selected  - default is #f00
 - --accessibility-tools-textSize: Specify the base font size when **Increase Font Size** is selected  - default is 16px (See note above about Increase Text Size feature)
+- --accessibility-tools-letterSpacing: Specify the distance between letters when **Increase Letter Spacing** is selected - default is .2rem; 
 
 ## Usage
 The toolbar can be triggered in a variety of methods:
