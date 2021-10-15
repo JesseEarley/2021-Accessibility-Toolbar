@@ -34,6 +34,8 @@ function checkAccessibiliy(){
 	var accessibilityHighlightLinks = getCookie('accessibility_highlightLinks');
 	var accessibilityContrast = getCookie('accessibility_contrast');
 	var accessibilityTextSize = getCookie('accessibility_textSize');
+	var accessibilityletterSpacing = getCookie('accessibility_letterSpacing');
+	var accessibilityDyslexiaFriendly = getCookie('accessibility_dyslexiaFriendly');
 	var accessibilityCursorSize = getCookie('accessibility_cursorSize');
 
 	if (accessibilityGrayscale == 'true')
@@ -55,6 +57,16 @@ function checkAccessibiliy(){
 	{
 		document.querySelector('html').classList.toggle('accessibilityTools-textSize');
 		document.querySelector('#AccessibilityToolsTextSize').checked = true;
+	}
+	if (accessibilityletterSpacing == 'true')
+	{
+		document.querySelector('html').classList.toggle('accessibilityTools-letterSpacing');
+		document.querySelector('#AccessibilityToolsLetterSpacing').checked = true;
+	}
+	if (accessibilityDyslexiaFriendly == 'true')
+	{
+		document.querySelector('html').classList.toggle('accessibilityTools-dyslexiaFriendly');
+		document.querySelector('#AccessibilityToolsDyslexiaFriendlyFont').checked = true;
 	}
 	if (accessibilityCursorSize == 'true')
 	{
@@ -129,6 +141,28 @@ ready(() => {
 		}
 		else{
 			setCookie('accessibility_textSize', 'false', '/','');
+		}	
+	});
+
+	document.querySelector('#AccessibilityToolsLetterSpacing').addEventListener('click',function(){
+		document.querySelector("html").classList.toggle("accessibilityTools-letterSpacing");
+		if (document.querySelector('html').classList.contains('accessibilityTools-letterSpacing'))
+		{
+			setCookie('accessibility_letterSpacing', 'true', '/','31 Dec 9999 23:59:59 GMT');
+		}
+		else{
+			setCookie('accessibility_letterSpacing', 'false', '/','');
+		}	
+	});
+
+	document.querySelector('#AccessibilityToolsDyslexiaFriendlyFont').addEventListener('click',function(){
+		document.querySelector("html").classList.toggle("accessibilityTools-dyslexiaFriendly");
+		if (document.querySelector('html').classList.contains('accessibilityTools-dyslexiaFriendly'))
+		{
+			setCookie('accessibility_dyslexiaFriendly', 'true', '/','31 Dec 9999 23:59:59 GMT');
+		}
+		else{
+			setCookie('accessibility_dyslexiaFriendly', 'false', '/','');
 		}	
 	});
 

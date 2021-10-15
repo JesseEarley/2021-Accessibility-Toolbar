@@ -4,8 +4,9 @@ html {
 /*Please modify these variables as needed to achieve your desired results*/
 :root {
     --accessibility-tools-wrapper: 100%; /*This variable will set the width of the accessibility toolbar*/
-    --accessibility-tools-highlightColor: #ff0;
+    --accessibility-tools-highlightColor: #ff0; /*This variable will set the highlight color for links*/
     --accessibility-tools-textSize: 16px; /*This variable will set the base text size once this option is chosen in the tools*/
+    --accessibility-tools-letterSpacing: .2rem; /*This variable will set the spacing between characters*/
 }
 
 #AccessibilityToolsButton-Mobile{
@@ -19,7 +20,6 @@ html {
     right: 0;
     top: 1rem;
     z-index: 99999;
-    
 }
 
 #AccessibilityToolsButton {
@@ -142,6 +142,12 @@ html {
 }
 .accessibilityTools-textSize {
     font-size: var(--accessibility-tools-textSize);
+}
+.accessibilityTools-letterSpacing {
+    letter-spacing: var(--accessibility-tools-letterSpacing);
+}
+.accessibilityTools-dyslexiaFriendly{
+    font-family: Comic Sans MS, "Comic Sans", "Comic Sans MS", "Comic Sans W01 Regular", sans-serif !important;
 }
 .accessibilityTools-cursorSize{
     cursor: url("../images/pointer.png"), auto;
