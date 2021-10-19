@@ -11,7 +11,7 @@ function setCookie(key, value, path, time) {
         expires.setTime(expires.getTime() + time);
         document.cookie = key + '=' + value + ';path=' + path + ';expires=' + expires.toUTCString() + ';sameSite=Lax';
     }
-	//Keeo the cookie but clear it out
+	//Keep the cookie but clear it out
     else{
         document.cookie = key + '=' + value + ';path=' + path + ';sameSite=Lax';
     }
@@ -29,49 +29,14 @@ function toggleAccessibilityTools(){
 }
 
 /* This function is called on page load to see if settings need to be pulled from cookies. If they do, those classes are toggled. */
-function checkAccessibiliy(){
-	let accessibilityGrayscale = getCookie('accessibility-grayscale');
-	let accessibilityHighlightLinks = getCookie('accessibility-highlightLinks');
-	let accessibilityContrast = getCookie('accessibility-contrast');
-	let accessibilityTextSize = getCookie('accessibility-textSize');
-	let accessibilityletterSpacing = getCookie('accessibility-letterSpacing');
-	let accessibilityDyslexiaFriendly = getCookie('accessibility-dyslexiaFriendly');
-	let accessibilityCursorSize = getCookie('accessibility-cursorSize');
-
-	if (accessibilityGrayscale == 'true')
-	{
-		document.querySelector('html').classList.toggle('accessibilityTools-grayscale');
-		document.querySelector('#AccessibilityToolsGrayscale').checked = true;
-	}
-	if (accessibilityHighlightLinks == 'true')
-	{
-		document.querySelector('html').classList.toggle('accessibilityTools-highlightLinks');
-		document.querySelector('#AccessibilityToolsHightLinks').checked = true;
-	}
-	if (accessibilityContrast == 'true')
-	{
-		document.querySelector('html').classList.toggle('accessibilityTools-contrast');
-		document.querySelector('#AccessibilityToolsContrast').checked = true;
-	}
-	if (accessibilityTextSize == 'true')
-	{
-		document.querySelector('html').classList.toggle('accessibilityTools-textSize');
-		document.querySelector('#AccessibilityToolsTextSize').checked = true;
-	}
-	if (accessibilityletterSpacing == 'true')
-	{
-		document.querySelector('html').classList.toggle('accessibilityTools-letterSpacing');
-		document.querySelector('#AccessibilityToolsLetterSpacing').checked = true;
-	}
-	if (accessibilityDyslexiaFriendly == 'true')
-	{
-		document.querySelector('html').classList.toggle('accessibilityTools-dyslexiaFriendly');
-		document.querySelector('#AccessibilityToolsDyslexiaFriendlyFont').checked = true;
-	}
-	if (accessibilityCursorSize == 'true')
-	{
-		document.querySelector('html').classList.toggle('accessibilityTools-cursorSize');
-		document.querySelector('#AccessibilityToolsCursorSize').checked = true;
+function checkAccessibiliy(accessibilityToggles){
+	let cookie = '';
+	for(i = 0; i < accessibilityToggles.length; i++) {
+		cookie = getCookie(accessibilityToggles[i].dataset.cookieandclass);
+		if(cookie == 'true'){
+			document.querySelector('HTML').classList.toggle(accessibilityToggles[i].dataset.cookieandclass);
+			document.querySelector('#' + accessibilityToggles[i].id).checked = true;
+		}
 	}
 
 	/* If on mobile, we need to display the accessibility button */
@@ -84,7 +49,6 @@ function checkAccessibiliy(){
 
 /* This function is called when a toggle is clicked. It will toggle a class on the HTML element and set a cookie */
 function clickAccessibilityToggle(evt){
-	console.log(evt.currentTarget);
 	document.querySelector("html").classList.toggle(evt.currentTarget.dataset.cookieandclass);
 	if (document.querySelector('html').classList.contains(evt.currentTarget.dataset.cookieandclass))
 	{
@@ -110,11 +74,11 @@ document.addEventListener("DOMContentLoaded", function() {
 	addToggleEventListeners(accessibilityToggles);
 	
 	/* Need to check to see if we need to display the accessibility tool settings */
-	checkAccessibiliy();
+	checkAccessibiliy(accessibilityToggles);
  
   /* Key combination to open the accessibility tools menu using the keyboard */
     document.onkeyup = function(e) {
-        if (e.altKey && e.shiftKey && e.which == 65) {
+        if (e.altKey && e.shiftKey && (e.key == "A" || e.key == "Å")) {
         toggleAccessibilityTools();
         }
     }
