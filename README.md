@@ -46,5 +46,7 @@ The toolbar can be triggered in a variety of methods:
 - Tabbing to the **Display Accessibility Tools** link and pressing **Enter** 
 - Using a mobile device and touching the accessibility icon in the top right of the screen
 
-## ToDo
-- Remove dependency on FontAwesome
+## Attributions and Thanks
+- Thank you Derek Featherstone (https://twitter.com/feather) for teaching a full-day class on web accessibility at the 2015 An Event Apart conference in Washington D.C. It set me on the path of always considering accessibility from the start of any project rather than as an afterthought.
+- Thank you Font Awesome for providing a free version of your font. As someone who is not great at creating artwork and icons from scratch, you've been a lifesaver.
+- Thank you Digital X at Michigan State University for recognizing the web accessibility work that I've done and continue to strive to do.
