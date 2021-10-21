@@ -8,7 +8,6 @@ html {
     --accessibility-tools-textSize: 16px; /*This variable will set the base text size once this option is chosen in the tools*/
     --accessibility-tools-letterSpacing: .2rem; /*This variable will set the spacing between characters*/
 }
-
 #AccessibilityToolsButton-Mobile{
     background: rgba(0,0,255,.7);
     border: none;
@@ -21,7 +20,13 @@ html {
     top: 1rem;
     z-index: 99999;
 }
-
+#AccessibilityToolsButton-Mobile svg{
+    fill: #FFF;
+    height: 3rem;
+    position: relative;
+    top: .3rem;
+    width: 3rem;
+}
 #AccessibilityToolsButton {
     border-right: 1px solid #FFF;
     border-bottom: 1px solid #FFF;
@@ -63,6 +68,7 @@ html {
 }
 .accessibilityTools h3 {
     font-size: 2rem;
+    margin: .5rem 0;
 }
 .accessibilityTools .accessibilityToolsOptionsContainer {
     display: flex;
@@ -70,8 +76,12 @@ html {
     justify-content: space-evenly;
     padding: 1rem;
 }
+.accessibilityTools svg{
+    height: 2.5rem;
+    width: 2.5rem;
+}
 .accessibilityTools .accessibilityToolsOption{
-    margin: 0 1rem;
+    margin: 1rem;
 }
 .accessibilityTools .accessibilityLabel {
     height: 1px;
@@ -152,11 +162,9 @@ html {
 .accessibilityTools-cursorSize{
     cursor: url("../images/pointer.png"), auto;
 }
-
 .accessibilityTools-cursorSize a:hover,
 .accessibilityTools-cursorSize button:hover,
 .accessibilityTools-cursorSize input:hover,
 .accessibilityTools-cursorSize .slider:hover{
     cursor: url("../images/hand.png"), auto !important;
 }
-
