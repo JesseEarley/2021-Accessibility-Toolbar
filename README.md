@@ -34,7 +34,7 @@ This feature will increase the curosr size for both the regular **pointer** and 
 4. Include FontAwesome font file included in **index.html**
 
 ## Customization
-The Accessibility Toolbar has base styles, so please style as necessary to incorporate into your website or project. The CSS file does have 3 variables to allow for additional customization:
+The Accessibility Toolbar has base styles, so please style as necessary to incorporate into your website or project. The CSS file does have 4 variables to allow for additional customization:
 - --accessibility-tools-wrapper: Specify width of the toolbar - default is 100%
 - --accessibility-tools-highlightColor: Specifcy the color that links should be highlighted in when **Highlight Links** option is selected  - default is #f00
 - --accessibility-tools-textSize: Specify the base font size when **Increase Font Size** is selected  - default is 16px (See note above about Increase Text Size feature)
