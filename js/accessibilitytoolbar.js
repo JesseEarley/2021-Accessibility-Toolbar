@@ -66,6 +66,64 @@ function addToggleEventListeners(accessibilityToggles){
 	}
 }
 
+/*This function moves the Readability Bar*/
+function moveReadabilityBar(){
+	let readabilityDiv = document.getElementById('ReadabilityBar');
+	function isTouchDevice(){
+		try{
+			document.createEvent("TouchEvent");
+			return true; 
+		}
+		catch(e){
+			return false;
+		}
+	}
+	const move = (e) =>{
+		//Try, catch to avoid errors for touch screens - Error thrown when user doesn't move their finger
+		try{
+			//PageX and PageY return the position of clients cursor from top left of screen
+			var y = !isTouchDevice() ? e.pageY: e.touches[0].pageY;
+		}
+		catch(e){}
+		//set let and top based on mouse pointer
+		readabilityDiv.style.top = y -50 + "px";
+	}
+	
+	//for mouse
+	document.addEventListener("mousemove", (e) => {
+		move(e);
+	});
+	
+	//forTouch
+	document.addEventListener("touchmove", (e) => {
+		move(e);
+	})
+}
+
+/*This function creates the Readability Bar*/
+function createReadabilityBar(){
+	const body = document.querySelector('body');
+	const readabilityDiv = document.createElement('div');
+	readabilityDiv.id = 'ReadabilityBar';
+	body.prepend(readabilityDiv);
+	moveReadabilityBar();
+}
+
+/*This function checks to see if the Readability Bar option is selected and calls createReadabilityBar() if it is*/
+function checkForReadabilityBar(){
+	let html = document.querySelector('html');
+	if (html.classList.contains('accessibilityTools-readabilityBar')){
+		createReadabilityBar();
+	}
+}
+
+/*This function will remove the readability bar*/
+function removeReadabilityBar(){
+	const readabilityDiv = document.getElementById('ReadabilityBar');
+	readabilityDiv.remove();
+}
+
+/*Code will run once DOM has loaded*/
 document.addEventListener("DOMContentLoaded", function() {
 	/* Get all of the toggles in the Accessibility Toolbar */
 	let accessibilityToggles = document.getElementsByClassName('accessibilityToggles');
@@ -87,4 +145,28 @@ document.addEventListener("DOMContentLoaded", function() {
 	document.querySelector('#AccessibilityToolsButtonClose').addEventListener('click',function(){
 		toggleAccessibilityTools();
 	});
+
+/* Readability Bar*/
+	//Need to check to see if the bar should show upon page load
+	checkForReadabilityBar();
+
+	//Need to add an observer for the HTML element to look for the accessibilityTools-readabilityBar class
+	//Need to create the bar if it exists or remove it if the class is removed
+	const observeHtml = document.querySelector('html');
+	var prevClassState = observeHtml.classList.contains('accessibilityTools-readabilityBar');
+	var observer = new MutationObserver(function(mutations) {
+		mutations.forEach(function(mutation) {
+			if(mutation.attributeName == "class"){
+				let currentClassState = mutation.target.classList.contains('accessibilityTools-readabilityBar');
+				if(prevClassState !== currentClassState)    {
+					prevClassState = currentClassState;
+					if(currentClassState)
+						createReadabilityBar();
+					else
+						removeReadabilityBar();
+				}
+			}
+		});
+	});
+	observer.observe(observeHtml, {attributes: true});
 });
