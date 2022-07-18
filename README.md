@@ -21,6 +21,10 @@ This feature will increase the text size across all elements on a page. (Note: T
 ### Increase Letter Spacing
 This feature will increase the spacing between all letters on the page.
 
+### Readability Bar
+This feature will slightly darken the page and add a full-width box across the page that follows the mouse to focus on only a few lines of 
+text at a time. The background within the box is not darkened to allow for easier reading against the other darkened areas of the page.
+
 ### Dyslexia Friendly Font
 This feature will change the font for the entire page to one that is easier to read for those with dyslexia. 
 
@@ -39,6 +43,8 @@ The Accessibility Toolbar has base styles, so please style as necessary to incor
 - --accessibility-tools-highlightColor: Specifcy the color that links should be highlighted in when **Highlight Links** option is selected  - default is #f00
 - --accessibility-tools-textSize: Specify the base font size when **Increase Font Size** is selected  - default is 16px (See note above about Increase Text Size feature)
 - --accessibility-tools-letterSpacing: Specify the distance between letters when **Increase Letter Spacing** is selected - default is .2rem; 
+- --accessibility-tools-readabilityBarTop: #000 : Specify the color of the top border of the readability bar - default is #000; 
+- --accessibility-tools-readabilityBarBottom: #000; Specify the color of the bottom border of the readability bar - default is #000;
 
 ## Usage
 The toolbar can be triggered in a variety of methods:
