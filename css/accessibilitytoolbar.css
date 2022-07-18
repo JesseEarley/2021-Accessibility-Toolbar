@@ -7,6 +7,8 @@ html {
     --accessibility-tools-highlightColor: #ff0; /*This variable will set the highlight color for links*/
     --accessibility-tools-textSize: 16px; /*This variable will set the base text size once this option is chosen in the tools*/
     --accessibility-tools-letterSpacing: .2rem; /*This variable will set the spacing between characters*/
+    --accessibility-tools-readabilityBarTop: #000; /*This variable will set the top border color for the readability bar*/
+    --accessibility-tools-readabilityBarBottom: #000; /*This variable will set the bottom border color for the readability bar*/
 }
 #AccessibilityToolsButton-Mobile{
     background: rgba(0,0,255,.7);
@@ -167,4 +169,15 @@ html {
 .accessibilityTools-cursorSize input:hover,
 .accessibilityTools-cursorSize .slider:hover{
     cursor: url("../images/hand.png"), auto !important;
+}
+#ReadabilityBar{
+    border-bottom: 5px solid var(--accessibility-tools-readabilityBarBottom);
+    border-top: 5px solid var(--accessibility-tools-readabilityBarTop);
+    box-shadow: 0 0 0 200vw rgba(0,0,0,0.1);
+    height: 9.6rem;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
 }
